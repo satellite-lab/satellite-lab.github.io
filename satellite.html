@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>satellite.image.lab</title>
+    <!-- link of icon -->
+    <!-- <link rel="icon" type="image/png" href="assets/Mat_Color.png"> -->
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"></script>
+    <script src="script/main2.js" defer></script>
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+
+    <div id=interface>
+
+
+        <p id="info_panel">
+            <span> Albisriederstrasse 500-600, Zürich, Switzerland
+            <a href="https://map.geo.admin.ch/index.html?topic=ech&lang=de&bgLayer=ch.swisstopo.pixelkarte-farbe&layers=ch.swisstopo.zeitreihen,ch.bfs.gebaeude_wohnungs_register,ch.bav.haltestellen-oev,ch.swisstopo.swisstlm3d-wanderwege,ch.swisstopo.swissimage-product&layers_opacity=1,1,1,0.8,1&layers_visibility=false,false,false,false,true&layers_timestamp=18641231,,,,2019&fbclid=IwAR3Irb_7ecrqfTUJjaaqQYdtJc_KUhkzCnLW5Fz69JENfxhc_nF4wLlth7g&E=2678305.52&N=1247538.60&zoom=11.16242897003889&catalogNodes=457">lat=47.373932,
+                            lon=8.476255</a>
+            <br> The pixel is the smallest element composing the digital image; it is a vector of information, but hides certain realities of the ground - read more here (link essay).
+            <br> This website is part of a research on digital image and ways of representing nature — read more here (link website page).
+            <br> <br> &#169; <a href="https://www.instagram.com/marie_verdeil/">marie verdeil</a> — 2021</span>
+
+
+
+        </p>
+
+        <button class="button button_small" id=infobutton value="Off">i </button>
+        <div id=zoombtn>
+            <button class="button button_small" id=zoomInbutton onclick=zoombtn(1)>+</button><br>
+            <button class="button button_small" id=zoomOutbutton onclick=zoombtn(2)>-</button>
+        </div>
+        <div id=modebtn>
+            <a href="#main_hue"><button class="button" id=huebtn>sort by hue</button></a>
+            <a href="#main_brightness"><button class="button" id=brightnessbtn>sort by brightness</button></a>
+            <a href="#main_green"><button class="button" id=greenbutton>sort by green</button></a>
+        </div>
+
+    </div>
+
+
+    <div id=alert> You have reach the maximum zoom level </div>
+    <div id=alltiles>
+
+
+        <!-- HUE -->
+
+        <div id=main_hue class=mode>
+            <!-- grid div 1 -->
+            <div class=wrapper>
+                <div class="griddiv first" id=div1_00_main_hue>
+
+                    <img id=griditem1 class=grid-item src="images/1_all_mosaic.jpg" alt="1">
+
+                </div>
+            </div>
+
+
+            <!-- grid div 2 -->
+            <div class=wrapper>
+                <div class=griddiv id=div2_00_main_hue>
+
+                    <img id=griditem1 class=grid-item src="images/2_all_mosaic.jpg" alt="1">
+
+                </div>
+            </div>
+
+
+            <!-- grid div 4 -->
+            <div class=wrapper>
+                <div class=griddiv id=div4_00_main_hue>
+
+                    <img id=griditem1 class=grid-item src="images/4_all_mosaic.jpg" alt="1">
+
+                </div>
+            </div>
+
+            <!-- grid div 8 -->
+            <div class=wrapper>
+                <div class=griddiv id=div8_00_main_hue>
+
+                    <img id=griditem1 class=grid-item src="images/8_all_mosaic.jpg" alt="1">
+
+                </div>
+            </div>
+
+            <!-- grid div 16 -->
+            <div class=wrapper>
+                <div class=griddiv id=div16_00_main_hue>
+
+                    <img id=griditem1 class=grid-item src="images/16_all_mosaic.jpg" alt="1">
+
+                </div>
+            </div>
+
+            <!-- grid div 32 -->
+            <div class=wrapper>
+                <div class=griddiv id=div32_00_main_hue>
+
+                    <img id=griditem1 class=grid-item src="images/32_all_mosaic.jpg" alt="1">
+
+                </div>
+            </div>
+
+            <!-- grid div 64 -->
+            <div class=wrapper>
+                <div class=griddiv id=div64_00_main_hue>
+
+                    <img id=griditem1 class=grid-item src="images/64_all_mosaic.jpg" alt="1">
+
+                </div>
+            </div>
+
+            <!-- grid div 128 -->
+            <div class=wrapper>
+                <div class=griddiv id=div128_00_main_hue>
+
+                    <img id=griditem1 class=grid-item src="images/128_all_mosaic.jpg" alt="1">
+
+                </div>
+            </div>
+
+            <!-- grid div 256 -->
+            <div class=wrapper>
+                <div class=griddiv id=div256_00_main_hue>
+
+                    <img id=griditem1 class=grid-item src="images/256_all_mosaic.jpg" alt="1">
+
+                </div>
+            </div>
+
+            <!-- grid div 512 -->
+            <div class=wrapper>
+                <div class=griddiv id=div512_00_main_hue>
+
+                    <img id=griditem1 class=grid-item src="images/512_all_mosaic.jpg" alt="1">
+
+                </div>
+            </div>
+
+            <!-- grid div 1024 -->
+            <div class=wrapper>
+                <div class=griddiv id=div1024_00_main_hue>
+
+                    <img id=griditem1 class=grid-item src="images/1024_all_mosaic.jpg" alt="1">
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- BRIGHTNESS -->
+
+        <div id=main_brightness class=mode>
+            <!-- grid div 1 -->
+            <div class=wrapper>
+                <div class="griddiv first" id=div1_00_main_brightness>
+
+                    <img id=griditem1 class=grid-item src="images/1_brightness_mosaic.jpg" alt="1">
+
+                </div>
+            </div>
+
+
+            <!-- grid div 2 -->
+            <div class=wrapper>
+                <div class=griddiv id=div2_00_main_brightness>
+
+                    <img id=griditem1 class=grid-item src="images/2_brightness_mosaic.jpg" alt="1">
+
+                </div>
+            </div>
+
+
+            <!-- grid div 4 -->
+            <div class=wrapper>
+                <div class=griddiv id=div4_00_main_brightness>
+
+                    <img id=griditem1 class=grid-item src="images/4_brightness_mosaic.jpg" alt="1">
+
+                </div>
+            </div>
+
+            <!-- grid div 8 -->
+            <div class=wrapper>
+                <div class=griddiv id=div8_00_main_brightness>
+
+                    <img id=griditem1 class=grid-item src="images/8_brightness_mosaic.jpg" alt="1">
+
+                </div>
+            </div>
+
+            <!-- grid div 16 -->
+            <div class=wrapper>
+                <div class=griddiv id=div16_00_main_brightness>
+
+                    <img id=griditem1 class=grid-item src="images/16_brightness_mosaic.jpg" alt="1">
+
+                </div>
+            </div>
+
+            <!-- grid div 32 -->
+            <div class=wrapper>
+                <div class=griddiv id=div32_00_main_brightness>
+
+                    <img id=griditem1 class=grid-item src="images/32_brightness_mosaic.jpg" alt="1">
+
+                </div>
+            </div>
+
+            <!-- grid div 64 -->
+            <div class=wrapper>
+                <div class=griddiv id=div64_00_main_brightness>
+
+                    <img id=griditem1 class=grid-item src="images/64_brightness_mosaic.jpg" alt="1">
+
+                </div>
+            </div>
+
+            <!-- grid div 128 -->
+            <div class=wrapper>
+                <div class=griddiv id=div128_00_main_brightness>
+
+                    <img id=griditem1 class=grid-item src="images/128_brightness_mosaic.jpg" alt="1">
+
+                </div>
+            </div>
+
+            <!-- grid div 256 -->
+            <div class=wrapper>
+                <div class=griddiv id=div256_00_main_brightness>
+
+                    <img id=griditem1 class=grid-item src="images/256_brightness_mosaic.jpg" alt="1">
+
+                </div>
+            </div>
+
+            <!-- grid div 512 -->
+            <div class=wrapper>
+                <div class=griddiv id=div512_00_main_brightness>
+
+                    <img id=griditem1 class=grid-item src="images/512_brightness_mosaic.jpg" alt="1">
+
+                </div>
+            </div>
+
+            <!-- grid div 1024 -->
+            <div class=wrapper>
+                <div class=griddiv id=div1024_00_main_brightness>
+
+                    <img id=griditem1 class=grid-item src="images/1024_brightness_mosaic.jpg" alt="1">
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- GREEN -->
+
+        <div id=main_green class=mode>
+            <!-- grid div 1 -->
+            <div class=wrapper>
+                <div class="griddiv first" id=div1_00_main_green>
+
+                    <img id=griditem1 class=grid-item src="images/1_green_mosaic.jpg" alt="1">
+
+                </div>
+            </div>
+
+
+            <!-- grid div 2 -->
+            <div class=wrapper>
+                <div class=griddiv id=div2_00_main_green>
+
+                    <img id=griditem1 class=grid-item src="images/2_green_mosaic.jpg" alt="1">
+
+                </div>
+            </div>
+
+
+            <!-- grid div 4 -->
+            <div class=wrapper>
+                <div class=griddiv id=div4_00_main_green>
+
+                    <img id=griditem1 class=grid-item src="images/4_green_mosaic.jpg" alt="1">
+
+                </div>
+            </div>
+
+            <!-- grid div 8 -->
+            <div class=wrapper>
+                <div class=griddiv id=div8_00_main_green>
+
+                    <img id=griditem1 class=grid-item src="images/8_green_mosaic.jpg" alt="1">
+
+                </div>
+            </div>
+
+            <!-- grid div 16 -->
+            <div class=wrapper>
+                <div class=griddiv id=div16_00_main_green>
+
+                    <img id=griditem1 class=grid-item src="images/16_green_mosaic.jpg" alt="1">
+
+                </div>
+            </div>
+
+            <!-- grid div 32 -->
+            <div class=wrapper>
+                <div class=griddiv id=div32_00_main_green>
+
+                    <img id=griditem1 class=grid-item src="images/32_green_mosaic.jpg" alt="1">
+
+                </div>
+            </div>
+
+            <!-- grid div 64 -->
+            <div class=wrapper>
+                <div class=griddiv id=div64_00_main_green>
+
+                    <img id=griditem1 class=grid-item src="images/64_green_mosaic.jpg" alt="1">
+
+                </div>
+            </div>
+
+            <!-- grid div 128 -->
+            <div class=wrapper>
+                <div class=griddiv id=div128_00_main_green>
+
+                    <img id=griditem1 class=grid-item src="images/128_green_mosaic.jpg" alt="1">
+
+                </div>
+            </div>
+
+            <!-- grid div 256 -->
+            <div class=wrapper>
+                <div class=griddiv id=div256_00_main_green>
+
+                    <img id=griditem1 class=grid-item src="images/256_green_mosaic.jpg" alt="1">
+
+                </div>
+            </div>
+
+            <!-- grid div 512 -->
+            <div class=wrapper>
+                <div class=griddiv id=div512_00_main_green>
+
+                    <img id=griditem1 class=grid-item src="images/512_green_mosaic.jpg" alt="1">
+
+                </div>
+            </div>
+
+            <!-- grid div 1024 -->
+            <div class=wrapper>
+                <div class=griddiv id=div1024_00_main_green>
+
+                    <img id=griditem1 class=grid-item src="images/1024_green_mosaic.jpg" alt="1">
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+</body>
